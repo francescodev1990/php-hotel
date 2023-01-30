@@ -42,7 +42,14 @@ $hotels = [
 
 ];
 
-print_r($hotels);
+
+for ($i = 0; $i < count($hotels); $i++) {
+    echo $hotels[$i]['name'] . "<br>";
+    echo $hotels[$i]['description'] . "<br>";
+    echo $hotels[$i]['parking'] . "<br>";
+    echo $hotels[$i]['vote'] . "<br>";
+    echo $hotels[$i]['distance_to_center'] . "<br>";
+}
 
 
 ?>
