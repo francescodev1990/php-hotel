@@ -79,7 +79,7 @@ $hotels = [
                 <th scope="col">Distanza dal centro</th>
             </tr>
         </thead>
-        <tbody class="">
+        <tbody>
             <?php foreach ($hotels as $hotel) { ?>
                 <tr>
                     <td><?php echo $hotel['name']; ?></td>
