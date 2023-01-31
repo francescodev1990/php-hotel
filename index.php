@@ -43,13 +43,15 @@ $hotels = [
 ];
 
 
-for ($i = 0; $i < count($hotels); $i++) {
-    echo $hotels[$i]['name'] . "<br>";
-    echo $hotels[$i]['description'] . "<br>";
-    echo $hotels[$i]['parking'] . "<br>";
-    echo $hotels[$i]['vote'] . "<br>";
-    echo $hotels[$i]['distance_to_center'] . "<br>";
-}
+// CICLO PER STAMPARE HOTELS/COMMENTATO PER NON VISUALIZZARLO IN PAGINA..
+
+// for ($i = 0; $i < count($hotels); $i++) {
+//     echo $hotels[$i]['name'] . "<br>";
+//     echo $hotels[$i]['description'] . "<br>";
+//     echo $hotels[$i]['parking'] . "<br>";
+//     echo $hotels[$i]['vote'] . "<br>";
+//     echo $hotels[$i]['distance_to_center'] . "<br>";
+// }
 
 
 ?>
@@ -67,7 +69,32 @@ for ($i = 0; $i < count($hotels); $i++) {
 </head>
 
 <body>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <?php foreach ($hotels as $hotel) { ?>
+                <tr>
+                    <td><?php echo $hotel['name']; ?></td>
+                    <td><?php echo $hotel['description']; ?></td>
+                    <td><?php if ($hotel['parking']) {
+                            echo 'Sì';
+                        } else {
+                            echo 'No';
+                        }; ?></td>
+                    <td><?php echo $hotel['vote']; ?></td>
+                    <td><?php echo $hotel['distance_to_center']; ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </body>
 
 </html>
